@@ -36,3 +36,11 @@ class Point:
         if self == other and self.y == 0 * self.x:
             return self.__class__(None, None, self.a, self.b)
         
+
+# check if on a curve where a == 5 and b == 7
+def onCurve(x, y):
+    return y**2 == x**3 + 5*x + 7
+
+
+def onSepc256k1(x, y):
+    return y**2 == x**3 + 7
