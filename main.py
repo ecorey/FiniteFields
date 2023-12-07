@@ -7,14 +7,22 @@ a = FieldElement(7, 13)
 b = FieldElement(12, 13)
 c = FieldElement(6, 13)
 
-print(a + b == c)
-print(a == a)
+# print(a + b == c)
+# print(a == a)
+
+z = a - b 
+print(z.num)
+print(z == c)
+
+k = a * b 
+print(k.num)
+print(k == c)
 
 p1 = Point(-1, -1, 5, 7)
 p2 = Point(-1, 1, 5, 7)
 inf = Point(None, None, 5, 7)
 
 x = p1 + inf
-print(x.x, x.y)
+# print(x.x, x.y)
 
-print(onCurve(-1, -1))
+# print(onCurve(-1, -1))
