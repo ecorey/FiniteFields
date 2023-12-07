@@ -2,6 +2,7 @@ class Point:
 
     # y^2 = x^3 + ax + b
     # y^2 = x^3 + 5x + 7
+    # sepc256k1 -> y^2 = x^3 + 7 (a = 0, b = 7)
     def __init__(self, x, y, a, b):
         self.a = a
         self.b = b
