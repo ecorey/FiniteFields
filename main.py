@@ -18,4 +18,10 @@ class FieldElement:
                 return self.num == other.num and self.prime == other.prime
         
 
+        def _add_(self, other):
+                if self.prime != other.prime:
+                        raise TypeError('Cannot add numbers in different fields')
+                num = (self.num + other.num) % self.prime
+                return self._class_(num, self.prime)
         
+             
