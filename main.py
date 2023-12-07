@@ -30,5 +30,17 @@ class FieldElement:
                 num = (self.num - other.num) % self.prime
                 return self._class_(num, self.prime)
         
+        def _mul_(self, other):
+                if self.prime != other.prime:
+                        raise TypeError('Cannot multiply numbers in different fields')
+                num = (self.num * other.num) % self.prime
+                return self._class_(num, self.prime)
+        
+        def _pow_(self, other):
+                n = exponent
+                while n < 0:
+                    n += self.prime -1
+                num = pow(self.num, n, self.prime)
+                return self._class_(num, self.prime)
         
 
