@@ -1,8 +1,11 @@
+# Class for Finite Fields 
+# Ovveride operators to work with modulo of a prime
 class FieldElement:
+
 
         def _init_(self, num, prime):
                 if num >= prime or num < 0:
-                        error = 'Num {} not in filed range 0 to {}'.format(num, prime -1)
+                        error = 'Num {} not in field range 0 to {}'.format(num, prime -1)
                         raise ValueError(error)
                 self.num = num
                 self.prime - prime
@@ -24,19 +27,22 @@ class FieldElement:
                 num = (self.num + other.num) % self.prime
                 return self._class_(num, self.prime)
 
+
         def _sub_(self, other):
                 if self.prime != other.prime:
                         raise TypeError('Cannot subtract numbers in different fields')
                 num = (self.num - other.num) % self.prime
                 return self._class_(num, self.prime)
         
+
         def _mul_(self, other):
                 if self.prime != other.prime:
                         raise TypeError('Cannot multiply numbers in different fields')
                 num = (self.num * other.num) % self.prime
                 return self._class_(num, self.prime)
         
-        def _pow_(self, other):
+
+        def _pow_(self, exponent):
                 n = exponent
                 while n < 0:
                     n += self.prime -1
