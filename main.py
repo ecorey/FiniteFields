@@ -23,5 +23,12 @@ class FieldElement:
                         raise TypeError('Cannot add numbers in different fields')
                 num = (self.num + other.num) % self.prime
                 return self._class_(num, self.prime)
+
+        def _sub_(self, other):
+                if self.prime != other.prime:
+                        raise TypeError('Cannot subtract numbers in different fields')
+                num = (self.num - other.num) % self.prime
+                return self._class_(num, self.prime)
         
-             
+        
+
