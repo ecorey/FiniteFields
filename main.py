@@ -1,4 +1,6 @@
 from finiteFields  import FieldElement
+from ellipticCurves import Point
+
 
 a = FieldElement(7, 13)
 b = FieldElement(12, 13)
